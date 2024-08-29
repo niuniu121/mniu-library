@@ -10,8 +10,9 @@ import LibraryRegistrationForm from './components/LibraryRegistrationForm.vue'
   </header>
 
   <main>
-    <LibraryRegistrationForm />
+    <!-- <LibraryRegistrationForm /> -->
     <!-- <JSONLab /> -->
+    <router-view></router-view>
   </main>
 </template>
 
@@ -42,4 +43,8 @@ import LibraryRegistrationForm from './components/LibraryRegistrationForm.vue'
     flex-wrap: wrap;
   }
 } */
+.about {
+  text-align: center;
+  margin-top: 60px;
+}
 </style>
