@@ -1,11 +1,10 @@
 <script setup>
 import { ref } from 'vue'
-import router from '../router'
 import { useAuth } from '../router/authenticate'
 
-const hardCodUserName = 'user'
-const hardCodePassword = '12345678'
-const { isAuthenticated } = useAuth()
+// const hardCodUserName = 'user'
+// const adminpassword = '12345678'
+const { login } = useAuth()
 
 const formData = ref({
   username: '',
@@ -16,17 +15,22 @@ const submitForm = () => {
   validateName(true)
   validatePassword(true)
   if (
-    !errors.value.username &&
-    !errors.value.password &&
-    formData.value.username === hardCodUserName &&
-    formData.value.password === hardCodePassword
+    // !errors.value.username &&
+    // !errors.value.password &&
+    formData.value.username === 'admin' &&
+    formData.value.password === 'adminpassword'
   ) {
-    alert('login success')
-    isAuthenticated.value = true
-    console.log('log in view', isAuthenticated.value)
-    router.push({ name: 'About' })
+    login('Admin')
+    // alert('login success')
+    // isAuthenticated.value = true
+    // console.log('log in view', isAuthenticated.value)
+    // router.push({ name: 'About' })
     // submittedCards.value.push({ ...formData.value })
     // clearForm()
+  } else if (formData.value.username === 'user' && formData.value.password === 'userpassword') {
+    login('user')
+  } else {
+    alert('Invalid username or password')
   }
 }
 

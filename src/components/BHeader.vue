@@ -2,7 +2,7 @@
 import router from '../router'
 import { useAuth } from '../router/authenticate'
 
-const { isAuthenticated } = useAuth()
+const { isAuthenticated, userRole } = useAuth()
 
 const Logout = () => {
   isAuthenticated.value = false
@@ -24,10 +24,13 @@ const Logout = () => {
         <li class="nav-item">
           <router-link to="/about" class="nav-link" active-class="active">About</router-link>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item" v-else-if="userRole === 'Admin'">
+          <router-link to="/admin" class="nav-link" active-class="active">Admin</router-link>
+        </li> -->
+        <li class="nav-item" v-if="!isAuthenticated">
           <router-link to="/login" class="nav-link" active-class="active">Login</router-link>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" v-else>
           <button class="nav-link" active-class="active" @click="Logout">Logout</button>
         </li>
       </ul>
