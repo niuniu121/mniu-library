@@ -33,6 +33,11 @@ const Logout = () => {
         <li class="nav-item" v-else>
           <button class="nav-link" active-class="active" @click="Logout">Logout</button>
         </li>
+        <li class="nav-item">
+          <router-link to="/FireLogin" class="nav-link" active-class="active"
+            >Firebase Login</router-link
+          >
+        </li>
       </ul>
     </header>
   </div>
