@@ -10,6 +10,6 @@ export default defineConfig({
       '@': '/src', 
     }
   },
-  base: '/mniu-library/',
+  //base: '/mniu-library/',
   //base: process.env.NODE_ENV === 'production' ? '/mniu-library/' : '/'
 })
