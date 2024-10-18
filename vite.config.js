@@ -11,5 +11,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: import.meta.env.MODE === 'production' ? '/mniu-library/' : '/'
+  publicPath: import.meta.env.NODE_ENV === 'production'
+    ? '/mniu-library/'
+    : '/'
 })
