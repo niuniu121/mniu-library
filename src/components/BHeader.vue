@@ -1,4 +1,5 @@
 <script setup>
+import { getAuth, signOut } from 'firebase/auth'
 import router from '../router'
 import { useAuth } from '../router/authenticate'
 
@@ -8,6 +9,18 @@ const Logout = () => {
   isAuthenticated.value = false
   alert('Logout success')
   router.push({ name: 'Home' })
+}
+
+const auth = getAuth()
+
+const firebaseLogout = () => {
+  signOut(auth)
+    .then(() => {
+      alert('Sign out successful')
+    })
+    .catch((error) => {
+      console.log('logout error', error)
+    })
 }
 </script>
 <template>
@@ -36,6 +49,40 @@ const Logout = () => {
         <li class="nav-item">
           <router-link to="/FireLogin" class="nav-link" active-class="active"
             >Firebase Login</router-link
+          >
+        </li>
+        <li class="nav-item">
+          <router-link to="/FireRegister" class="nav-link" active-class="active"
+            >Firebase Register</router-link
+          >
+        </li>
+        <li class="nav-item">
+          <router-link to="/addBOOK" class="nav-link" active-class="active">Add Book</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/editBook" class="nav-link" active-class="active">Edit Book</router-link>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" @click="firebaseLogout">Firebase Logout</button>
+        </li>
+        <li class="nav-item">
+          <router-link to="/GetBookCount" class="nav-link" active-class="active"
+            >Get Book Count</router-link
+          >
+        </li>
+        <li class="nav-item">
+          <router-link to="/WeatherView" class="nav-link" active-class="active"
+            >WeatherView</router-link
+          >
+        </li>
+        <li class="nav-item">
+          <router-link to="/CountBookAPI" class="nav-link" active-class="active"
+            >CountBookAPI</router-link
+          >
+        </li>
+        <li class="nav-item">
+          <router-link to="/GetAllBookAPI" class="nav-link" active-class="active"
+            >getAllBooksAPI</router-link
           >
         </li>
       </ul>

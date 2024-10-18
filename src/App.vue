@@ -1,11 +1,17 @@
 <script setup>
 //import JSONLab from './components/JSONLab.vue'
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 import BHeader from './components/BHeader.vue'
+const router = useRouter()
+const showHeader = computed(() => {
+  return router.currentRoute._value.name !== 'CountBookAPI'
+})
 //import LibraryRegistrationForm from './components/LibraryRegistrationForm.vue'
 </script>
 
 <template>
-  <header>
+  <header v-if="showHeader">
     <BHeader />
   </header>
 

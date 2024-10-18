@@ -1,12 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAuth } from '../router/authenticate'
 import AboutView from '../views/AboutView.vue'
+import AddBookView from '../views/AddBookView.vue'
 import AdminView from '../views/AdminView.vue'
+import CountBookAPI from '../views/CountBookAPI.vue'
+import EditBookView from '../views/EditBookView.vue'
 import FirebaseRegisterView from '../views/FirebaseRegisterView.vue'
 import FirebaseSigninView from '../views/FirebaseSigninView.vue'
+import GetAllBookAPI from '../views/GetAllBookAPI.vue'
+import GetBookCountView from '../views/GetBookCountView.vue'
 import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
-
+import WeatherView from '../views/WeatherView.vue'
 //const { isAuthenticated,userRole } = useAuth()
 const { isAuthenticated, userRole } = useAuth()
 
@@ -41,6 +46,36 @@ const routes = [
     path: '/FireRegister',
     name: 'FireRegister',
     component: FirebaseRegisterView
+  },
+  {
+    path: '/addBook',
+    name: 'AddBook',
+    component: AddBookView
+  },
+  {
+    path: '/editBook',
+    name: 'EditBook',
+    component: EditBookView
+  },
+  {
+    path: '/GetBookCount',
+    name: 'GetBookCount',
+    component: GetBookCountView
+  },
+  {
+    path: '/WeatherView',
+    name: 'WeatherView',
+    component: WeatherView
+  },
+  {
+    path: '/CountBookAPI',
+    name: 'CountBookAPI',
+    component: CountBookAPI
+  },
+  {
+    path: '/GetAllBookAPI',
+    name: 'GetAllBookAPI',
+    component: GetAllBookAPI
   }
 ]
 
