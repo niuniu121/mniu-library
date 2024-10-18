@@ -1,6 +1,5 @@
-import { fileURLToPath, URL } from 'node:url'
-
 import vue from '@vitejs/plugin-vue'
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
@@ -12,5 +11,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  //base: process.env.NODE_ENV === 'production' ? '/mniu-library/' : '/'
+  base: import.meta.env.MODE === 'production' ? '/mniu-library/' : '/'
 })
