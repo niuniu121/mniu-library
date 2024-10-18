@@ -46,7 +46,7 @@ const apikey = 'd6c06313288cef00b9a1e39c4e665a76'
 const searchByCity = async () => {
   try {
     const responseLocation = await axios.get(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city.value}&appid=${apikey}`
+      `https://api.openweathermap.org/geo/1.0/direct?q=${city.value}&appid=${apikey}`
     )
     //Returned data from API is stored as JSON file in weatherData
     console.log('Response Location:', responseLocation.data[0])
