@@ -10,5 +10,5 @@ export default defineConfig({
       '@': '/src', 
     }
   },
-  base: import.meta.process.env.NODE_ENV === 'production' ? '/mniu-library/' : '/'
+  base: '/mniu-library/'
 })
