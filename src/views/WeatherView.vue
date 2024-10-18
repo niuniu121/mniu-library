@@ -54,7 +54,7 @@ const searchByCity = async () => {
     const lon = responseLocation.data[0].lon
     console.log('lat', lat)
     console.log('lng', lon)
-    const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apikey}`
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apikey}`
     //await means wait for the fetchWeatherData method to complete before proceeding
     await fetchWeatherData(url)
     // weatherData.value = responseLocation.data
