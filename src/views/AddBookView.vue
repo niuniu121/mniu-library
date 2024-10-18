@@ -8,6 +8,7 @@
       </div>
       <div>
         <label for="name">Name:</label>
+        <!-- text -->
         <input type="text" v-model="name" id="name" required />
       </div>
       <button type="submit">Add Book</button>
@@ -23,9 +24,9 @@
 </template>
 
 <script setup>
-import { addDoc, collection, getDocs } from 'firebase/firestore'
-import { onMounted, ref } from 'vue'
-import db from '../firebase/init.js'
+import { addDoc, collection, getDocs } from 'firebase/firestore';
+import { onMounted, ref } from 'vue';
+import db from '../firebase/init.js';
 
 const isbn = ref('')
 const name = ref('')
